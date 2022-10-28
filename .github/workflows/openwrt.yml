@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: checkout
+      name: checkout
       with:
         ref: master
       #run: ./configure
