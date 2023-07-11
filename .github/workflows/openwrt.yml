@@ -46,10 +46,9 @@ jobs:
     - name: make download
       run: make download -j8 
     - name: make compile
-      timeout-minutes: 600
       run: |
         make defconfig
-        make V=s -j1
+        #make V=s -j1
         #make V=s -j$(nproc)
     
     - uses: actions/upload-artifact@v3
