@@ -41,13 +41,15 @@ jobs:
 #       with:
 #         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
 #         SSH_PASS: ${{ secrets.SSH_PASS }}
+    - name: build xiaomi r3p config
+      run: cat r3p.config > .config
     - name: make download
       run: make download -j8 
     - name: make compile
       run: |
         make defconfig
-        #make V=s -j1
-        make V=s -j$(nproc)
+        make V=s -j1
+        #make V=s -j$(nproc)
     
     - uses: actions/upload-artifact@v3
       with:
