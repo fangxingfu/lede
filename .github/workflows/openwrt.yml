@@ -36,11 +36,11 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-    - name: Start SSH session
-      uses: luchihoratiu/debug-via-ssh@main
-      with:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-        SSH_PASS: ${{ secrets.SSH_PASS }}
+#     - name: Start SSH session
+#       uses: luchihoratiu/debug-via-ssh@main
+#       with:
+#         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+#         SSH_PASS: ${{ secrets.SSH_PASS }}
     - name: make download
       run: make download -j8 
     - name: make compile
