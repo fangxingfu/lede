@@ -49,7 +49,7 @@ jobs:
       run: |
         make defconfig
         #make V=s -j1
-        #make V=s -j$(nproc)
+        make V=s -j$(nproc)
     
     - uses: actions/upload-artifact@v3
       with:
